@@ -1,0 +1,7 @@
+10.0
+5
+1 SQLCHAR 0 1 "\"" 0 first_double_quote  Latin1_General_CI_AI
+2 SQLCHAR 0 39 "\",\"" 1 ipFROM ""
+3 SQLCHAR 0 39 "\",\"" 2 ipTO ""
+4 SQLCHAR 0 2 "\",\"" 3 countrySHORT Latin1_General_CI_AI
+5 SQLCHAR 0 64 "\"\r\n" 4 countryLONG Latin1_General_CI_AI

@@ -1,0 +1,65 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+if not exists (select * from sys.objects where object_id = object_id(N'{databaseOwner}[{objectQualifier}IPCountryCode]') and type = N'U')
+    BEGIN
+        CREATE TABLE {databaseOwner}[{objectQualifier}IPCountryCode]
+        (
+	        [ID] [int] IDENTITY(1,1) NOT NULL,
+	        [countryCODE] [nvarchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	        [countryNAME] [nvarchar] (64) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	        [pageURL] [nvarchar] (128) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	        CONSTRAINT [PK_{objectQualifier}IPCountryCode] PRIMARY KEY CLUSTERED 
+            (
+	            [ID] ASC
+            )
+            WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+        ) 
+        ON [PRIMARY]
+    END
+GO
+
+if not exists (select * from sys.objects where object_id = object_id(N'{databaseOwner}[{objectQualifier}IPCountry]') and type = N'U')
+    BEGIN
+        CREATE TABLE {databaseOwner}[{objectQualifier}IPCountry]
+        (
+	        [ipFROM] [char](39) NOT NULL ,
+	        [ipTO] [char](39) NOT NULL ,
+	        [countrySHORT] [nvarchar] (2) COLLATE SQL_Latin1_General_CP1_CI_AS NULL ,
+	        [countryLONG] [nvarchar] (64) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+        )
+        ON [PRIMARY]
+    END
+GO
+
+BULK INSERT {databaseOwner}[{objectQualifier}IPCountry]
+FROM 'C:\IP2LOCATION-LITE-DB1.IPV6.CSV'
+WITH
+(
+    FORMATFILE = 'C:\DB1-IPv6.FMT'
+)
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}IPCountry] SET
+ipFROM = (SUBSTRING(REPLICATE('0', 39), 1, 39 - LEN(ipFROM)) + ipFROM),
+ipTO = (SUBSTRING(REPLICATE('0', 39), 1, 39 - LEN(ipTO)) + ipTO)
+GO
+
+CREATE UNIQUE CLUSTERED INDEX [ipTO_index] ON {databaseOwner}[{objectQualifier}IPCountry] 
+(
+	[ipTO] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

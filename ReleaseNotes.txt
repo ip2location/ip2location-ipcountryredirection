@@ -1,0 +1,8 @@
+﻿<h3>IPCountryRedirectionVB</h3>
+IP2Location.com <br />
+<a href="mailto:support@ip2location.com">support@ip2location.com</a><br />
+<a href=http://www.ip2location.com>http://www.ip2location.com</a><br />
+<hr />
+<h3>About the IPCountryRedirectionVB</h3>
+<b>Version 7.0.0</b><br />
+IP2Location.com IPCountryRedirectionVB extension to redirect a page based on user's country location.
