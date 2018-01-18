@@ -15,6 +15,13 @@ Get more geolocation information at:
 * URL Redirection
 
 
+## IPv4 BIN vs IPv6 BIN
+
+Use the IPv4 BIN file if you just need to query IPv4 addresses.
+
+Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
+
+
 ## Support
 
 Email: support@ip2location.com  
