@@ -6,7 +6,7 @@ Product       : IP2Location IP Country Redirection
 Web Site      : http://www.ip2location.com
 Email         : support@ip2location.com
 
-(c) Copyright 2001-2017 IP2Location.com. All Rights Reserved.
+(c) Copyright 2001-2018 IP2Location.com. All Rights Reserved.
 ---------------------------------------------------------------------
 
 
@@ -141,7 +141,15 @@ PLEASE UNINSTALL ALL PREVIOUS VERSIONS OF THIS MODULE BEFORE INSTALLING THIS VER
 
 
 +=========================- 
-| 5. Technical Support
+| 5. IPv4 BIN vs IPv6 BIN
++=========================-  
+Use the IPv4 BIN file if you just need to query IPv4 addresses.
+
+Use the IPv6 BIN file if you need to query BOTH IPv4 and IPv6 addresses.
+
+
++=========================- 
+| 6. Technical Support
 +=========================-     
    
    Any other problem and bugs please report at support@ip2location.com.
