@@ -3,7 +3,7 @@ IPCountryRedirectionVB module detects the web visitor's country via their IP add
 
 For web visitor from country that has not been block by administrators, IPCountryRedirectionVB module can display the correct web visitor's country name on the module.
 
-Download the latest DB1 LITE database for free from [http://lite.ip2location.com/database-ip-country](http://lite.ip2location.com/database-ip-country)
+Download the latest DB1 LITE database for free from [https://lite.ip2location.com/database-ip-country](https://lite.ip2location.com/database-ip-country)
 
 Get more geolocation information at:
 [https://www.ip2location.com/](https://www.ip2location.com/)
