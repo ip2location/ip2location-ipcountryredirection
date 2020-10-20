@@ -1,4 +1,4 @@
-# IP2Location™ IP Country Redirection ("IPCountryRedirectionVB")
+# IP2Location™ IP Country Redirect ("IPCountryRedirectionVB")
 IPCountryRedirectionVB module detects the web visitor's country via their IP address and redirects them to another page or URL address if that country has been blocked in the Country Configuration by administrators.
 
 For web visitor from country that has not been block by administrators, IPCountryRedirectionVB module can display the correct web visitor's country name on the module.
